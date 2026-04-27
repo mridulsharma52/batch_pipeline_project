@@ -1,6 +1,7 @@
 import google.generativeai as genai
 import pandas as pd
-genai.configure(api_key="AIzaSyBWGjKkdbN7UD5d36AxL56R65gGSkSPdBA")
+import os
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 model = genai.GenerativeModel("gemini-2.0-flash")
 def generate_insights(csv_file):
     print("AI INSIGHTS GENERATION STARTED")
